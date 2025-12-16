@@ -20,7 +20,7 @@
    <groupId>org.apache.artemis</groupId>
    <artifactId>artemis-project</artifactId>
    <packaging>pom</packaging>
-   <version>2.50.0-SNAPSHOT</version>
+   <version>0.0.1-testing-SNAPSHOT</version>
 
    <parent>
       <groupId>org.apache</groupId>
@@ -275,7 +275,7 @@
 
       <fast-tests>false</fast-tests>
 
-      <project.build.outputTimestamp>2025-12-11T18:06:22Z</project.build.outputTimestamp>
+      <project.build.outputTimestamp>2025-12-16T17:24:45Z</project.build.outputTimestamp>
    </properties>
 
    <scm>
