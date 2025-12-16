@@ -21,7 +21,7 @@
    <parent>
       <groupId>org.apache.artemis</groupId>
       <artifactId>artemis-junit-parent</artifactId>
-      <version>0.0.1-testing-SNAPSHOT</version>
+      <version>0.0.1-testing</version>
    </parent>
 
    <artifactId>artemis-junit</artifactId>
