@@ -28,6 +28,19 @@
       <version>35</version>
    </parent>
 
+     <repositories>
+        <repository>
+          <id>staging-artemis-console</id>
+	      <url>https://repository.apache.org/content/repositories/orgapacheartemis-1009</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+     </repositories>
+
    <modules>
       <!-- Modules that use artemis-project as their parent -->
       <module>artemis-bom</module>
