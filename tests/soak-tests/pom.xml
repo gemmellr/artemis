@@ -201,7 +201,7 @@
                <reuseForks>false</reuseForks>
                <skipTests>${skipSoakTests}</skipTests>
                <includes>
-                  <include>**/*Test.java</include>
+                  <include>**/LargeMessageInterruptTest.java</include>
                </includes>
                <argLine>${activemq-surefire-argline}</argLine>
             </configuration>

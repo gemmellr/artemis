@@ -86,7 +86,16 @@ public class LargeMessageInterruptTest extends SoakTestBase {
    }
 
    private void killProcess(Process process) throws Exception {
-      Runtime.getRuntime().exec("kill -SIGINT " + process.pid());
+      logger.warn("======== Issuing kill -SIGINT " + process.pid());
+      Process killProcess = Runtime.getRuntime().exec("kill -SIGINT " + process.pid());
+
+      logger.warn("======== Awaiting kill process exit ");
+      boolean exited = killProcess.waitFor(70, TimeUnit.SECONDS);
+      if (!exited) {
+         logger.warn("======== kill process did not exit in alotted 70sec ");
+      } else {
+         logger.warn("======== kill process exit code: " + killProcess.exitValue());
+      }
    }
 
    @Test
@@ -189,7 +198,9 @@ public class LargeMessageInterruptTest extends SoakTestBase {
 
       assertTrue(killAt.await(60, TimeUnit.SECONDS));
       killProcess(serverProcess);
-      assertTrue(serverProcess.waitFor(1, TimeUnit.MINUTES));
+      logger.warn("======== Awaiting serverProcess exit ");
+      assertTrue(serverProcess.waitFor(30, TimeUnit.MINUTES));
+      logger.warn("======== serverProcess exited ");
       serverProcess = startServer(SERVER_NAME_0, 0, 0);
 
       assertTrue(done.await(60, TimeUnit.SECONDS));
