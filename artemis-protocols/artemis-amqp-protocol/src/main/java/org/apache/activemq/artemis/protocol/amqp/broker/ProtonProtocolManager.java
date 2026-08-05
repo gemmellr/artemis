@@ -102,7 +102,7 @@ public class ProtonProtocolManager extends AbstractProtocolManager<AMQPMessage, 
    // delivery-failed flag set true.
    private boolean amqpTreatRejectAsUnmodifiedDeliveryFailed = AmqpSupport.AMQP_TREAT_REJECT_AS_UNMODIFIED_DELIVERY_FAILURE;
 
-   private int initialRemoteMaxFrameSize = 4 * 1024;
+   private int initialRemoteMaxFrameSize = AmqpSupport.INITIAL_REMOTE_MAX_FRAME_SIZE_DEFAULT;
 
    private String[] saslMechanisms = MechanismFinder.getDefaultMechanisms();
 

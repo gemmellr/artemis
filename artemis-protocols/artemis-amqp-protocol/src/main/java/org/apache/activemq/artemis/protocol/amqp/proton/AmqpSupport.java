@@ -98,6 +98,7 @@ public class AmqpSupport {
    static final Symbol FAILOVER_SERVER_LIST = Symbol.valueOf("failover-server-list");
 
    public static final int MAX_FRAME_SIZE_DEFAULT = 128 * 1024;
+   public static final int INITIAL_REMOTE_MAX_FRAME_SIZE_DEFAULT = 4 * 1024;
 
    // Symbols used in configuration of newly opened links.
    public static final Symbol COPY = Symbol.getSymbol("copy");

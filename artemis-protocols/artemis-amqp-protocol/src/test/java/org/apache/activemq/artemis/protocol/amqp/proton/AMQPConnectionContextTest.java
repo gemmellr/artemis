@@ -49,6 +49,8 @@ public class AMQPConnectionContextTest {
 
       ProtonProtocolManager manager = Mockito.mock(ProtonProtocolManager.class);
       Mockito.when(manager.getServer()).thenReturn(server);
+      Mockito.when(manager.getMaxFrameSize()).thenReturn(AmqpSupport.MAX_FRAME_SIZE_DEFAULT);
+      Mockito.when(manager.getInitialRemoteMaxFrameSize()).thenReturn(AmqpSupport.INITIAL_REMOTE_MAX_FRAME_SIZE_DEFAULT);
 
       EventLoop eventLoop = Mockito.mock(EventLoop.class);
       Channel transportChannel = Mockito.mock(Channel.class);
